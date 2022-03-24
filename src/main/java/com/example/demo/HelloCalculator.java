@@ -29,7 +29,7 @@ public class HelloCalculator implements HelloService {
     @Override
     public int divide(int num1, int num2) {
         if ((num1 == 0)) {
-            itIsError(num2);
+            itIsError(num1);
         } else if ((num1 != 0) && (num2 != 0)) sum = num1 / num2;
         return sum;
     }
