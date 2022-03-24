@@ -12,5 +12,5 @@ public interface HelloService {
 
     int divide(int num1, int num2);
 
-    void itIsError(int num1, int num2);
+    void itIsError(int num);
 }
