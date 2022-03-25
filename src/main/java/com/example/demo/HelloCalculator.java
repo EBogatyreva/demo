@@ -4,7 +4,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class HelloCalculator implements HelloService {
-    int sum;
 
     @Override
     public String welcomeToCalculator() {
@@ -27,22 +26,11 @@ public class HelloCalculator implements HelloService {
     }
 
     @Override
-    public int divide(int num1, int num2) {
-        if ((num1 == 0)) {
-            itIsError(num1);
-        } else if ((num1 != 0) && (num2 != 0)) sum = num1 / num2;
-        return sum;
+    public String divide(int num1, int num2) {
+        if ((num2 == 0)) {
+            return "Ошибка деления на ноль";
+
+        } else return java.lang.String.valueOf(num1 / num2);
     }
 
-    @Override
-    public void itIsError(int num1) {
-        try {
-            boolean b = (num1 == 0);
-
-        } catch (ArithmeticException e) {
-            System.out.println("Введите оба параметра");
-
-        }
-
-    }
 }
