@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping
 public class HelloController {
-    private final HelloCalculator helloCalculator;
+    private final HelloCalculatorImpl helloCalculator;
 
-    public HelloController(HelloCalculator helloCalculator) {
+    public HelloController(HelloCalculatorImpl helloCalculator) {
         this.helloCalculator = helloCalculator;
     }
 
@@ -34,7 +34,7 @@ public class HelloController {
     }
 
     @GetMapping(path = "/calculator/divide")
-    public String divide(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
+    public int divide(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
         return helloCalculator.divide(num1, num2);
     }
 }

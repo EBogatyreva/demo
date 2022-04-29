@@ -3,7 +3,7 @@ package com.example.demo;
 import org.springframework.stereotype.Service;
 
 @Service
-public class HelloCalculator implements HelloService {
+public class HelloCalculatorImpl implements HelloService {
 
     @Override
     public String welcomeToCalculator() {
@@ -26,11 +26,10 @@ public class HelloCalculator implements HelloService {
     }
 
     @Override
-    public String divide(int num1, int num2) {
+    public int divide(int num1, int num2) {
         if ((num2 == 0)) {
-            return "Ошибка деления на ноль";
-
-        } else return java.lang.String.valueOf(num1 / num2);
+            new DivideByZero();
+        } return (num1 / num2);//можно и без указания библиотеки
     }
 
 }
